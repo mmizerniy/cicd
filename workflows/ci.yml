@@ -1,1 +1,34 @@
+name: CI Workflow
+
+on:
+  push:
+    branches:
+      - main  # Тригер на push у головну гілку
+  workflow_dispatch:  # Дозволяє запускати workflow вручну через інтерфейс GitHub
+
+jobs:
+  build:
+    runs-on: ubuntu-latest  
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2 
+
+      - name: Set up Node.js (для JavaScript/Node.js проектів)
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+
+      - name: Install dependencies
+        run: npm install 
+
+      - name: Run build
+        run: npm run build 
+
+      - name: Run unit tests
+        run: npm test  
+
+      - name: Push changes (якщо необхідно)
+        run: git push  
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
 
