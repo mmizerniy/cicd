@@ -3,7 +3,7 @@ name: Node.js CI Workflow
 on:
   push:
     branches:
-      - main  # Запуск при push в головну гілку
+      - main  
   workflow_dispatch:  # Дозволяє запускати workflow вручну через GitHub UI
 
 jobs:
