@@ -1,0 +1,59 @@
+[33mcommit 321399bc8e6fda50e71e6acf1715008f555d689e[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Maks <145326255+mmizerniy@users.noreply.github.com>
+Date:   Sun Dec 29 02:08:11 2024 +0200
+
+    Create cicd.yml
+
+[33mcommit d520d2739abbf134d3207f75fa2411fb87211164[m
+Author: Maks <145326255+mmizerniy@users.noreply.github.com>
+Date:   Sun Dec 29 01:57:54 2024 +0200
+
+    Update cicd.yml
+
+[33mcommit 552ac75d437ed344edefc0dcfa77f37a6655164c[m
+Author: Maks <145326255+mmizerniy@users.noreply.github.com>
+Date:   Sun Dec 29 01:52:53 2024 +0200
+
+    Create cicd.yml
+
+[33mcommit b43f613171a56c4f7dd55400c9d6ce29e5e60192[m
+Author: Maks <145326255+mmizerniy@users.noreply.github.com>
+Date:   Sun Dec 29 01:48:41 2024 +0200
+
+    Delete .github/workflows directory
+
+[33mcommit 850bcfefbb4e54c564e476da4851feb5a23176dc[m
+Author: Maks <145326255+mmizerniy@users.noreply.github.com>
+Date:   Sun Dec 29 01:47:03 2024 +0200
+
+    Update ci.yml
+
+[33mcommit d907a679b26b7a657215a48178a84978860c2e9f[m
+Author: Maks <145326255+mmizerniy@users.noreply.github.com>
+Date:   Sun Dec 29 01:43:22 2024 +0200
+
+    Create ci.yml
+
+[33mcommit 858954d72a3c7494ed78c155edfcd1984b3b5413[m
+Author: Maks <145326255+mmizerniy@users.noreply.github.com>
+Date:   Sun Dec 29 01:33:57 2024 +0200
+
+    Update ci.yml
+
+[33mcommit 82838069d30d11dc4700e1e970ee367896e5e951[m
+Author: Maks <145326255+mmizerniy@users.noreply.github.com>
+Date:   Sun Dec 29 01:31:02 2024 +0200
+
+    Update ci.yml
+
+[33mcommit b2e0c286646b1ecebaaca2a4cca4f5f0fb3a633d[m
+Author: Maks <145326255+mmizerniy@users.noreply.github.com>
+Date:   Sun Dec 29 01:29:39 2024 +0200
+
+    Create ci.yml
+
+[33mcommit 4e5c72bfb0f9be819c9bf9688693d7521e814fdb[m
+Author: Maks <145326255+mmizerniy@users.noreply.github.com>
+Date:   Sun Dec 29 00:12:14 2024 +0200
+
+    Initial commit
