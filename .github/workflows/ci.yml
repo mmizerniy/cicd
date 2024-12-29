@@ -1,0 +1,37 @@
+name: CI Workflow
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:  # Дозволяє запускати workflow вручну
+  
+jobs:
+  build:
+    runs-on: ubuntu-latest  # Вибір операційної системи (в даному випадку Ubuntu)
+
+    steps:
+    - name: Checkout репозиторію
+      uses: actions/checkout@v3
+
+    - name: Налаштування Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '16'  # Встановлюємо версію Node.js (змініть, якщо потрібно)
+
+    - name: Встановлення залежностей
+      run: npm install  # Цей крок встановлює залежності проекту
+
+    - name: Запуск збірки
+      run: npm run build  # Цей крок запускає команду для збірки проекту
+
+    - name: Запуск юніт-тестів
+      run: npm test  # Цей крок запускає юніт-тести
+
+    - name: Коміт змін (якщо є)
+      run: |
+        git config --global user.name "Your Name"
+        git config --global user.email "your-email@example.com"
+        git add .
+        git commit -m "Автоматичні оновлення CI" || echo "Немає змін для коміту"
+        git push
