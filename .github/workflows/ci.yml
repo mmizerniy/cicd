@@ -1,37 +1,47 @@
-name: CI Workflow
+name: Node.js CI
 
 on:
+  # Тригер на подію push
   push:
     branches:
-      - main
-  workflow_dispatch:  # Дозволяє запускати workflow вручну
-  
+      - main  # Задайте гілку, на яку ви хочете реагувати
+  # Додати можливість запуску вручну через GitHub UI
+  workflow_dispatch:
+
 jobs:
   build:
-    runs-on: ubuntu-latest  # Вибір операційної системи (в даному випадку Ubuntu)
+    runs-on: ubuntu-latest  # Вибір операційної системи
 
     steps:
-    - name: Checkout репозиторію
-      uses: actions/checkout@v3
+      # Крок 1: Клонування репозиторію
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
-    - name: Налаштування Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: '16'  # Встановлюємо версію Node.js (змініть, якщо потрібно)
+      # Крок 2: Встановлення Node.js
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'  # Задайте вашу версію Node.js
 
-    - name: Встановлення залежностей
-      run: npm install  # Цей крок встановлює залежності проекту
+      # Крок 3: Встановлення залежностей
+      - name: Install dependencies
+        run: npm install
 
-    - name: Запуск збірки
-      run: npm run build  # Цей крок запускає команду для збірки проекту
+      # Крок 4: Створення збірки проекту
+      - name: Build the project
+        run: npm run build  # Переконайтеся, що в package.json є скрипт build
 
-    - name: Запуск юніт-тестів
-      run: npm test  # Цей крок запускає юніт-тести
+      # Крок 5: Запуск юніт тестів
+      - name: Run unit tests
+        run: npm test  # Переконайтесь, що в package.json є скрипт test
 
-    - name: Коміт змін (якщо є)
-      run: |
-        git config --global user.name "Your Name"
-        git config --global user.email "your-email@example.com"
-        git add .
-        git commit -m "Автоматичні оновлення CI" || echo "Немає змін для коміту"
-        git push
+      # Крок 6: Завантаження змін до віддаленого репозиторію (якщо потрібно)
+      - name: Push changes to repository
+        run: |
+          git config --global user.name 'Maks'
+          git config --global user.email 'mmizerniy@gmail.com'
+          git add .
+          git commit -m "CI updates"
+          git push origin main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Токен для пушу змін
