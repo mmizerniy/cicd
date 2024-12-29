@@ -1,12 +1,18 @@
 {
-  "name": "cicd",
+  "name": "my-node-project",
   "version": "1.0.0",
-  "description": "",
+  "description": "A sample Node.js project",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest",  // Приклад скрипта для запуску юніт тестів з використанням Jest
+    "build": "echo 'Building project...'",  // Це замінити на реальну команду збірки, якщо потрібно
+    "start": "node index.js"
   },
-  "keywords": [],
-  "author": "",
+  "dependencies": {
+    "express": "^4.17.1",  // Додати ваші залежності
+    "jest": "^27.4.5"  // Приклад тестової бібліотеки
+  },
+  "devDependencies": {},
+  "author": "Your Name",
   "license": "ISC"
 }
