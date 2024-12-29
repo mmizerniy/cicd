@@ -4,13 +4,13 @@
   "description": "A sample Node.js project",
   "main": "index.js",
   "scripts": {
-    "test": "jest",  // Приклад скрипта для запуску юніт тестів з використанням Jest
-    "build": "echo 'Building project...'",  // Це замінити на реальну команду збірки, якщо потрібно
+    "test": "jest",  
+    "build": "echo 'Building project...'",  
     "start": "node index.js"
   },
   "dependencies": {
-    "express": "^4.17.1",  // Додати ваші залежності
-    "jest": "^27.4.5"  // Приклад тестової бібліотеки
+    "express": "^4.17.1",  
+    "jest": "^27.4.5" 
   },
   "devDependencies": {},
   "author": "Your Name",
