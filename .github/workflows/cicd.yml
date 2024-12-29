@@ -1,0 +1,33 @@
+name: Node.js CI Workflow
+
+on:
+  push:
+    branches:
+      - main  
+  workflow_dispatch:  # Дозволяє запускати workflow вручну через GitHub UI
+
+jobs:
+  build:
+    runs-on: ubuntu-latest  # Використовуємо Ubuntu середовище для виконання
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2  # Клонуємо репозиторій
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2  # Налаштовуємо середовище Node.js
+        with:
+          node-version: '14'  # Вказуємо версію Node.js (можна змінити на потрібну)
+
+      - name: Install dependencies
+        run: npm install  # Встановлюємо залежності проекту
+
+      - name: Run build
+        run: npm run build  # Запускаємо команду для збірки проекту (зазвичай npm run build)
+
+      - name: Run tests
+        run: npm test  # Запускаємо тести проекту (наприклад, якщо є юніт тести)
+
+      - name: Push changes
+        run: git push  # Пушимо зміни в репозиторій після виконання всіх етапів
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Для аутентифікації та оновлення репозиторію
